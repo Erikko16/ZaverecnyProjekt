@@ -3,7 +3,7 @@
 Automatické krmítko ryb<br>
 
 
-Inspirace: https://www.youtube.com/watch?v=aifWWOIwX1A
+Inspirace: https://www.youtube.com/watch?v=aifWWOIwX1A<br>
            https://www.youtube.com/watch?v=ijt6JUwdLgY<br>
 <br>
 1.Září - zakoupít součástek a začít s obvodem <br>
