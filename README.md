@@ -12,5 +12,7 @@ https://www.youtube.com/watch?v=ijt6JUwdLgY<br>
 3.Listopad - Dokončit software<br>
 4.Prosinec - Dokončení projektu a odevzdát dokumentace<br>
 
+Odkazy:<br>
+https://arduino-shop.cz/arduino/1457-esp8266-esp-12e-ota-wemos-d1-ch340-wifi-arduino-ide-uno-r3.html<br>
 
 
