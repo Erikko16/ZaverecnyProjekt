@@ -1,6 +1,6 @@
 # ZaverecnyProjekt
 <br>
-Automatické krmítko ryb<br>
+Cílem je vytvořit automatické krmítko ryb<br>
 
 
 Inspirace: https://www.youtube.com/watch?v=aifWWOIwX1A<br>
