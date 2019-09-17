@@ -1,6 +1,6 @@
 # ZaverecnyProjekt
 <br>
-Cílem je vytvořit automatické krmítko ryb<br>
+Cílem je vytvořit automatické krmítko ryb pomocí esp a servo motoru<br>
 
 <br>
 Inspirace:<br> 
