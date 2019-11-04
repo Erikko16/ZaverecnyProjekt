@@ -1,16 +1,17 @@
 #include <NTPClient.h>
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
+#include <Servo.h>
 
-const char *ssid     = "SSID";
-const char *password = "PASS";
+const char *ssid     = "ESPNet";
+const char *password = "";
 
 const long utcOffsetInSeconds = 3600;
 
 char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
 WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "tik.cesnet.cz", utcOffsetInSeconds);
+NTPClient timeClient(ntpUDP, "192.168.1.1", utcOffsetInSeconds);
 
 void setup(){
   Serial.begin(115200);
@@ -18,7 +19,7 @@ void setup(){
   WiFi.begin(ssid, password);
 
   while ( WiFi.status() != WL_CONNECTED ) {
-    delay ( 500 );
+    delay ( 500 ); 
     Serial.print ( "." );
   }
 
