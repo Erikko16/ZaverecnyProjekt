@@ -1,18 +1,14 @@
-#include <Servo.h>
+#include <Servo.h> 
 
-Servo myservo;  
+int servoPin = 2; //D9 ESP8266
 
-int pos = 0;    
-void setup() {
-  myservo.attach(5);  
-
-void loop() {
-  for (pos = 0; pos <= 180; pos += 1) { 
-    myservo.write(pos);              
-    delay(1);                       
-  }
-  for (pos = 180; pos >= 0; pos -= 1) { 
-    myservo.write(pos);             
-    delay(15);                      
-  }
+Servo Servo1; 
+void setup() { 
+   Servo1.attach(servoPin); 
+}
+void loop(){ 
+   Servo1.write(0); 
+   delay(1000);  
+   Servo1.write(180); 
+   delay(1000); 
 }
