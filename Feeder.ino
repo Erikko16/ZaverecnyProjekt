@@ -2,9 +2,10 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 #include <Servo.h>
+#include <WiFiManager.h>
 
-const char *ssid     = "ESPNet";
-const char *password = "";
+/*const char *ssid     = "ESPNet";
+const char *password = "";*/
 
 const long utcOffsetInSeconds = 3600;
 
@@ -16,12 +17,16 @@ NTPClient timeClient(ntpUDP, "192.168.1.1", utcOffsetInSeconds);
 void setup(){
   Serial.begin(115200);
 
-  WiFi.begin(ssid, password);
+  WiFiManager wifiManager;
+  wifiManager.startConfigPortal("ArduinoAP");
 
-  while ( WiFi.status() != WL_CONNECTED ) {
+
+  //WiFi.begin(ssid, password);
+
+  /*while ( WiFi.status() != WL_CONNECTED ) {
     delay ( 500 ); 
     Serial.print ( "." );
-  }
+  }*/
 
   timeClient.begin();
 }
