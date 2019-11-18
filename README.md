@@ -20,5 +20,5 @@ Odkazy:<br>
 ESP: https://arduino-shop.cz/arduino/1457-esp8266-esp-12e-ota-wemos-d1-ch340-wifi-arduino-ide-uno-r3.html<br>
 Funkce Servo motoru: https://navody.arduino-shop.cz/arduino-projekty/servo-motor.html
 WifiManager:https://diyprojects.io/wifimanager-library-easily-manage-wi-fi-connection-projects-esp8266/
-
+NTP:https://lastminuteengineers.com/esp8266-ntp-server-date-time-tutorial/
 
