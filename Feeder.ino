@@ -3,6 +3,7 @@
 #include <WiFiUdp.h>
 #include <Servo.h>
 #include <WiFiManager.h>
+#include <DNSServer.h>
 
 /*const char *ssid     = "ESPNet";
 const char *password = "";*/
