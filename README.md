@@ -23,7 +23,7 @@ Pin 5 -> D3<br>
 Pin 12 -> D6<br>
 Pin 13 -> D7<br>
 <br>
-pio device monitor -b 115200<br>
+pio device monitor -b 11520<br>
 Odkazy:<br>
 ESP: https://arduino-shop.cz/arduino/1457-esp8266-esp-12e-ota-wemos-d1-ch340-wifi-arduino-ide-uno-r3.html<br>
 Funkce Servo motoru: https://navody.arduino-shop.cz/arduino-projekty/servo-motor.html
