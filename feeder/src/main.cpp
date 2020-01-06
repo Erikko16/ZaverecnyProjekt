@@ -24,11 +24,11 @@ WiFiUDP ntpUDP;
 
 char mqtt_server[40];
 char mqtt_port[6] = "8080";
-char ntp_server[33] = "192.168.1.1";
+char blynk_token[33] = "192.168.1.1";
 char static_ip[16] = "0.0.0.0";
 char static_gw[16] = "0.0.0.0";
 char static_sn[16] = "0.0.0.0";
-NTPClient timeClient(ntpUDP, ntp_server, utcOffsetInSeconds);
+NTPClient timeClient(ntpUDP, blynk_token, utcOffsetInSeconds);
 
 //flag for saving data
 bool shouldSaveConfig = false;
@@ -71,7 +71,7 @@ void setup() {
 
           strcpy(mqtt_server, json["mqtt_server"]);
           strcpy(mqtt_port, json["mqtt_port"]);
-          strcpy(ntp_server, json["ntp_server"]);
+          strcpy(blynk_token, json["blynk_token"]);
 
           if(json["ip"]) {
             Serial.println("setting custom ip from config");
@@ -92,7 +92,7 @@ void setup() {
   }
   //end read
   Serial.println(static_ip);
-  Serial.println(ntp_server);
+  Serial.println(blynk_token);
   Serial.println(mqtt_server);
 
 
@@ -101,7 +101,7 @@ void setup() {
   // id/name placeholder/prompt default length
   WiFiManagerParameter custom_mqtt_server("server", "mqtt server", mqtt_server, 40);
   WiFiManagerParameter custom_mqtt_port("port", "mqtt port", mqtt_port, 5);
-  WiFiManagerParameter custom_ntp_server("blynk", "blynk token", ntp_server, 34);
+  WiFiManagerParameter custom_blynk_token("blynk", "blynk token", blynk_token, 34);
 
   //WiFiManager
   //Local intialization. Once its business is done, there is no need to keep it around
@@ -121,7 +121,7 @@ void setup() {
   //add all your parameters here
   wifiManager.addParameter(&custom_mqtt_server);
   wifiManager.addParameter(&custom_mqtt_port);
-  wifiManager.addParameter(&custom_ntp_server);
+  wifiManager.addParameter(&custom_blynk_token);
 
   //reset settings - for testing
   //wifiManager.resetSettings();
@@ -150,7 +150,7 @@ void setup() {
 
   strcpy(mqtt_server, custom_mqtt_server.getValue());
   strcpy(mqtt_port, custom_mqtt_port.getValue());
-  strcpy(ntp_server, custom_ntp_server.getValue());
+  strcpy(blynk_token, custom_blynk_token.getValue());
 
   //save the custom parameters to FS
   if (shouldSaveConfig) {
@@ -159,7 +159,7 @@ void setup() {
     JsonObject& json = jsonBuffer.createObject();
     json["mqtt_server"] = mqtt_server;
     json["mqtt_port"] = mqtt_port;
-    json["ntp_server"] = ntp_server;
+    json["blynk_token"] = blynk_token;
 
     json["ip"] = WiFi.localIP().toString();
     json["gateway"] = WiFi.gatewayIP().toString();
@@ -214,4 +214,3 @@ void loop() {
     }
   }
 }
-
